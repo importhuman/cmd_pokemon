@@ -19,13 +19,18 @@
 - baseDamage = -1, why?
 - count and maxcount (will probably be explained by another file)
 
+----------------------------------------------------------------------------------
 
 ```attacklist.py```
+
+----------------------------------------------------------------------------------
 
 ```pokeworld.py```
 
 - Why deepcopy?
 - Why [::-1]?
+
+----------------------------------------------------------------------------------
 
 
 ```player.py```
@@ -53,3 +58,10 @@ indexOfCurrent = self.pokemonInHand.index(self.currentPokemon)
 What is this for? To choose Gary's pokemon? How does it work?
 
 - Return False/True: purpose?
+
+----------------------------------------------------------------------------------
+
+```pokemonStrengthChart.py```
+
+
+----------------------------------------------------------------------------------
