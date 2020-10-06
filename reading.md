@@ -26,3 +26,30 @@
 
 - Why deepcopy?
 - Why [::-1]?
+
+
+```player.py```
+
+- nonzerohp??
+- ```python
+for index, pokemon in enumerate(self.archivePokemons):
+                pprint(index+1, end=') ')
+```
+
+```end-') '```??
+
+- archiveExchange doesn't have any "Press Enter to Continue" or input statement, how does it still work to end the function?
+- ```pprint(f"Current Pokemon:")``` : why is f needed when no formatting is there?
+
+- ```python
+indexOfCurrent = self.pokemonInHand.index(self.currentPokemon)
+            if indexOfCurrent == self.pokemonLimit - 1: return False            
+            self.currentPokemon = self.pokemonInHand[(indexOfCurrent+1)%len(self.pokemonInHand)]
+            if self.currentPokemon.health <= 0: return False
+            pprint(f"{self.name} Chose {self.currentPokemon.name}"); sleep(0.1)
+            return True   
+```
+
+What is this for? To choose Gary's pokemon? How does it work?
+
+- Return False/True: purpose?
