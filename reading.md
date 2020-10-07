@@ -17,7 +17,7 @@
     + min(2, max(0, randint(0, 1)), randint(0, 1)) gives 0 or 1 only, replace it with randint(0, 1) 
 
 - baseDamage = -1, why?
-- count and maxcount (will probably be explained by another file)
+<!-- - count and maxcount (will probably be explained by another file) ----- current and max PP -->
 
 ----------------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@
 ```pokeworld.py```
 
 - Why deepcopy?
-- Why [::-1]?
+<!-- - Why [::-1]? ------- Because .pop() is used, which removes last element, so need to reverse list -->
 
 ----------------------------------------------------------------------------------
 
@@ -93,4 +93,56 @@ What is this for? To choose Gary's pokemon? How does it work?
 		- Are newHeal and newRecoil only set to 5 once? 
 
 
+- learnNewAttack()
+	+ ```python
+		indNone = self.attacks.index(None)
+		self.attacks[indNone] = attackToLearn
+	```
+		Is this to reset attackToLearn? How does it work
 
+	+ ```python
+		else:
+				idiscard = randint(0, len(self.attacks)-1)
+				self.attacks[idiscard] = attackToLearn
+	```
+		What is this for?
+
+- attack()
+	+ enemyPokemon, attackUsedInd not defined elsewhere?
+	+ Code for choosing attack? (probably in another file)
+	+ Two times damage? 
+	One: This loop-
+	```python
+				if criticalChance >= 0.92:
+					pprint("Critical Hit...")
+					sleep(0.2)
+					enemyPokemon.health -= floor((0.3+random()*0.2)*attackUsed.damage)
+				if enemyType in typeAdantages[attackType]:
+					pprint("It's Super Effective !!")
+					sleep(0.2)
+					enemyPokemon.health -= floor((0.6+random()*0.8)*attackUsed.damage)
+				elif enemyType in typeDisadantages[attackType]:
+					pprint("It's not very effective !!")
+					sleep(0.2)
+					enemyPokemon.health += floor((0.2+random()*0.5)*attackUsed.damage)
+	```
+	Two: 
+	```python
+	enemyPokemon.health -= floor(attackUsed.damage*((2.71823)**(-0.0056*enemyPokemon.defence)))
+	```
+
+
+- displayStats()
+	+ When is this block used?
+	```python
+	else:
+		pprint(f"{i+1}) {attack}")
+	```
+
+- npcPokemonReady()
+	+ Why playertype needed? It's not just for NPC either
+
+- useStone()
+	+ Infinite uses for stone intentional?
+
+-----------------------------------------------------------------------------
