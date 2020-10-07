@@ -3,6 +3,7 @@ from pokeworld import pokemonWorld
 from pokemon import Pokemon
 from npc import Gary
 from citys_and_game import pokemon_duel, main_game, pprint, save_game, load_game, clearScreen
+#from copy import deepcopy
 
 
 from time import sleep
@@ -139,6 +140,14 @@ def gameloop():
         clearScreen()
     else:
         pprint(f"Welcome Back {player.name}. Let's Continue our adventure..."); sleep(0.5)
+        #-----------------------------------------------------------------
+        # For adding new pokemon, uncomment deepcopy and do this: 
+        # zapdosData =  deepcopy(pokemonWorld['zapdos'])
+        # Zapdos = Pokemon('zapdos', zapdosData, 0)
+        # Zapdos.npcPokemonReady(100)
+        # player.pokemonInHand.append(Zapdos)
+        # (or this, if there are 7 pokemon already in the current list)
+        # player.archivePokemons.append(Zapdos)
         clearScreen()
     
     while not gameOver:

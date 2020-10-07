@@ -65,3 +65,32 @@ What is this for? To choose Gary's pokemon? How does it work?
 
 
 ----------------------------------------------------------------------------------
+
+```pokemon.py```
+
+- updateLevel()
+	+ ```python
+		if playertype is None:
+			self.experience = self.experience - self.nextLevelAt
+		else: self.experience = randint(0, self.nextLevelAt)
+		```
+
+		- self.experience is less than self.nextLevelAt, how does this work?
+		- else statement is for non-player pokemon?
+
+	+ ```python
+		for attack in self.attacks:
+			if attack is not None:
+				if attack.heal == 0 and attack.recoil == 0:
+					attack.updateAttack(self.level)
+				if attack.heal != 0:
+					attack.updateAttack(self.level, newHeal=5)
+				if attack.recoil != 0:
+					attack.updateAttack(self.level, newRecoil=5)
+		```
+
+		- updateAttack has no attribute "level", what is being done here?
+		- Are newHeal and newRecoil only set to 5 once? 
+
+
+
